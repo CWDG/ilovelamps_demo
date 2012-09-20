@@ -1,0 +1,11 @@
+<ul>
+  <% @lamps.each do |lamp| %>
+
+    <li>
+      <a href="/lamps/<%= lamp.id %>">
+        #<%= lamp.id %>. <%= lamp %> Lamp
+      </a>
+    </li>
+
+  <% end %>
+</ul>
