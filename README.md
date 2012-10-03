@@ -4,12 +4,12 @@ I Love Lamps.com is a simple store for buying lamps of all kinds. You can see wh
 
 ## TODO / Feature List
 
-* ''Show Available Lamps on the front page''
-* ''Simple Header with Logo''
-* ''Simple Page to Show Lamp Details''
-* ''Abstract Lamp into a Model''
-* ''Add critical info about the lamps: price, picture''
-* '''THIS IS WHERE WE STOPPED'''
+* **Show Available Lamps on the front page**
+* **Simple Header with Logo**
+* **Simple Page to Show Lamp Details**
+* **Abstract Lamp into a Model**
+* **Add critical info about the lamps: price, picture**
+* ***THIS IS WHERE WE STOPPED***
 * Add color variable to Lamp class and display on Lamp page.
 * Create form to Buy Lamps
 * Process Purchases on the Server (decrement quantity)
