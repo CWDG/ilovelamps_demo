@@ -24,3 +24,11 @@ get '/lamps/:id' do
   @lamp = all_lamps[id]
   erb :lamp, :layout => :common_layout
 end
+
+get '/buy/:id' do
+  id = params[:id].to_i
+  raise "Not valid ID" if id >= all_lamps.size
+
+  @lamp = all_lamps[id]
+  erb :buy, :layout => :common_layout
+end

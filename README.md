@@ -27,3 +27,15 @@ I Love Lamps.com is a simple store for buying lamps of all kinds. You can see wh
 * Apply Bootstrap to the site. Create better nav bar. Center page.
 * Add "Sale" item to front page. Special emphasis with pitch.
 
+
+
+## Javascript Intro
+* Show basic Chrome js console
+* Show console logging.
+* Demo "getElementById() and getElementbyClass()"
+* Download jQuery & embed in layout
+* Demo $('#foo') and $('.bar')
+* Create buy page & form
+* Add quantity & total fields
+* Subtract quantity on server
+* Dynamically update total on.('change')

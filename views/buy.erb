@@ -1,0 +1,6 @@
+<h3>
+  $<%= @lamp.price %> is a small price to pay for a <%= @lamp %> Lamp!
+</h3>
+
+<form id="buy-lamp" action="/submit-order/<%= @lamp.id %>" method="post">
+</form>
