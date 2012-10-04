@@ -1,6 +1,22 @@
 <h3>
-  $<%= @lamp.price %> is a small price to pay for a <%= @lamp %> Lamp!
+  $<%= @lamp.price %> is a small price to pay for a <%= @lamp %> Lamp! Get yours now before they are all gone! Only <%= @lamp.quantity %> left!
 </h3>
 
-<form id="buy-lamp" action="/submit-order/<%= @lamp.id %>" method="post">
+<% if @error %>
+  <h4>Oops! There was an error processing your order. <%= @error %></h4>
+<% end %>
+
+<form id="buy-lamp" action="/buy/<%= @lamp.id %>" method="post">
+
+  <label for="price"><%= @lamp %> Lamp:</label>
+  <input id="price" type="text" value="<%= @lamp.price %>" disabled name="price"></input>
+
+  <label for="quantity">Quantity:</label>
+  <input id="quantity" type="text" value="1" name="quantity"></input>
+
+  <label for="total">Total:</label>
+  <input id="total" type="text" value="<%= @lamp.price %>" disabled></input>
+
+  <input type="submit" value="Buy"></input>
+
 </form>
