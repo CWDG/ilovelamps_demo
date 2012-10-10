@@ -3,7 +3,7 @@
 </h3>
 
 <% if @error %>
-  <h4>Oops! There was an error processing your order. <%= @error %></h4>
+  <h4 style="color: #990000">Oops! There was an error processing your order. <%= @error %></h4>
 <% end %>
 
 <form id="buy-lamp" action="/buy/<%= @lamp.id %>" method="post">
