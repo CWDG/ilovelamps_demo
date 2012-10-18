@@ -1,11 +1,15 @@
 <h3>Viewing <%= @lamp %> Lamp</h3>
 
 <p>
-  The price of a <%= @lamp %> Lamp is $<%= @lamp.price %>.
+  The price of a <%= @lamp %> Lamp is $<%= @lamp.price %>. There are <%= @lamp.quantity %> left!
 </p>
 
 <img src="/img/lamps/<%= @lamp.id %>.png" height="300px" />
 
-<a href="/buy/<%= @lamp.id %>">Buy This Lamp!</a>
+<p>
+  <a href="/buy/<%= @lamp.id %>">Buy This Lamp!</a>
+</p>
 
-<a href="/">Back to Home</a>
+<p>
+  <a href="/">Back to Home</a>
+</p>

@@ -1,0 +1,17 @@
+
+#header {
+  height: 120px;
+}
+
+.logo {
+  float: left;
+}
+
+.nav {
+  height: 50px;
+}
+
+.nav > li {
+  float: left;
+  margin-right: 20px;
+}
