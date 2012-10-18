@@ -1,34 +1,32 @@
 require 'sinatra'
 require_relative 'lamp'
 
-def all_lamps
-  $lamps ||= [
-    Lamp.new(:desk, 3.00),
-    Lamp.new(:table, 8.00),
-    Lamp.new(:floor, 15.00),
-    Lamp.new(:magic, 1000000.00),
-    Lamp.new(:mario, 999.00)
-  ]
+if Lamp.count.zero?
+  Lamp.create(:desk, 14.00, 250)
+  Lamp.create(:table, 24.99, 85)
+  Lamp.create(:floor, 45.00, 46)
+  Lamp.create(:magic, 1000000.00, 1)
+  Lamp.create(:mario, 99.00, 4)
 end
 
 get '/' do
-  @lamps = all_lamps
+  @lamps = Lamp.all
   erb(:index, :layout => :common_layout)
 end
 
 
 get '/lamps/:id' do
-  @lamp = find_lamp_by_id(params)
+  @lamp = Lamp.find(params[:id].to_i)
   erb :lamp, :layout => :common_layout
 end
 
 get '/buy/:id' do
-  @lamp = find_lamp_by_id(params)
+  @lamp = Lamp.find(params[:id].to_i)
   erb :buy, :layout => :common_layout
 end
 
 post '/buy/:id' do
-  @lamp = find_lamp_by_id(params)
+  @lamp = Lamp.find(params[:id].to_i)
   q = params[:quantity].to_i
   if q <= 0
     # can't order 0
@@ -41,13 +39,7 @@ post '/buy/:id' do
   else
     # yay
     @lamp.quantity -= q
+    @lamp.save
     erb :thankyou, :layout => :common_layout
   end
-end
-
-def find_lamp_by_id(params)
-  id = params[:id].to_i
-  raise "Not valid ID" if id >= all_lamps.size
-
-  all_lamps[id]
 end
